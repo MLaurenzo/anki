@@ -6,6 +6,6 @@ import org.junit.Test;
 public class CanaryTest {
     @Test
     public void canaryTest() {
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 }
