@@ -10,7 +10,7 @@ public class Anki {
     private final UserInterface userInterface;
     private final DeckLoader deckLoader;
 
-    private final Student student = new Student();
+    private final Student student;
 
     private final Box redBox = new Box();
     private final Box orangeBox = new Box();
@@ -19,6 +19,8 @@ public class Anki {
     public Anki(UserInterface userInterface, DeckLoader deckLoader) {
         this.userInterface = userInterface;
         this.deckLoader = deckLoader;
+
+        student = new Student(userInterface);
     }
 
     public void run() {

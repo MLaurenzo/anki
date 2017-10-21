@@ -12,6 +12,6 @@ public class FileDeckLoader implements DeckLoader {
     @Override
     public Deck loadDeck() {
         // TODO fake implementation
-        return new Deck(Arrays.asList(new Card("question", "answer")));
+        return new Deck(Arrays.asList(new Card("question1", "answer1"), new Card("question2", "answer2")));
     }
 }
