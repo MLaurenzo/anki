@@ -9,21 +9,34 @@ import java.util.List;
  */
 public class Session {
 
+    private final Student student;
     private final Box redBox;
     private final Box orangeBox;
     private final Box greenBox;
 
-    public Session(Box redBox, Box orangeBox, Box greenBox) {
+    public Session(Student student, Box redBox, Box orangeBox, Box greenBox) {
+        this.student = student;
         this.redBox = redBox;
         this.orangeBox = orangeBox;
         this.greenBox = greenBox;
     }
 
-    public void start() {
+    public void run() {
         while(!redBox.isEmpty()) {
-            // fake implementation
-            Card takenCard = redBox.takeCard();
-            greenBox.addCard(takenCard);
+            Card currentCard = redBox.takeCard();
+
+            switch (student.guessAnswer(currentCard)) {
+                default:
+                    // the currentCard must go back to the red box by default in order not to loose it
+                    redBox.addCard(currentCard);
+                    break;
+                case PARTLY_CORRECT:
+                    orangeBox.addCard(currentCard);
+                    break;
+                case CORRECT:
+                    greenBox.addCard(currentCard);
+                    break;
+            }
         }
     }
 
