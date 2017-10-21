@@ -13,7 +13,7 @@ public class Box {
      * This method add a card into the box.
      * @param card
      */
-    public void addCard(Card card) {
+    public void putCard(Card card) {
         cards.add(card);
     }
 

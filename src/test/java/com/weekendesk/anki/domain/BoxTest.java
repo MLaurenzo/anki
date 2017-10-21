@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class BoxTest {
 
     private Box box;
@@ -22,14 +20,14 @@ public class BoxTest {
 
     @Test
     public void test_not_empty_box() {
-        box.addCard(new Card(null, null));
+        box.putCard(new Card(null, null));
 
         Assert.assertFalse(box.isEmpty());
     }
 
     @Test
     public void test_empty_box_after_added_and_taking_card() {
-        box.addCard(new Card(null, null));
+        box.putCard(new Card(null, null));
         box.takeCard();
 
         Assert.assertTrue(box.isEmpty());
@@ -40,7 +38,7 @@ public class BoxTest {
         Box box = new Box();
         Card card = new Card(null, null);
 
-        box.addCard(card);
+        box.putCard(card);
 
         Assert.assertEquals(card, box.takeCard());
     }

@@ -31,7 +31,7 @@ public class SessionTest {
         orangeBox = new Box();
         greenBox = new Box();
 
-        redBox.addCard(new Card(null, null));
+        redBox.putCard(new Card(null, null));
 
         session = new Session(student, redBox, orangeBox, greenBox);
     }
