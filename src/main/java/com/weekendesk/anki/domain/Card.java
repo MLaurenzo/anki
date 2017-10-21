@@ -14,6 +14,6 @@ public class Card {
     }
 
     public String toString() {
-        return question + "|" + answer;
+        return question + "?|" + answer;
     }
 }

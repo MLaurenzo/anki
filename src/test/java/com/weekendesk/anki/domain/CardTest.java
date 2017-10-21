@@ -20,6 +20,6 @@ public class CardTest {
     public void test_toString_method() {
         Card card = new Card(question, answer);
 
-        Assert.assertEquals("MyQuestion|MyAnswer", card.toString());
+        Assert.assertEquals("MyQuestion?|MyAnswer", card.toString());
     }
 }
