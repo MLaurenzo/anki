@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AnkiTest {
@@ -29,6 +28,24 @@ public class AnkiTest {
         anki.run();
 
         verify(userInterface, times(1)).sayGoodByeToTheUser();
+    }
+
+    @Test
+    public void test_deck_is_loading_when_user_answers_yes() {
+        when(userInterface.askUserToLoadDeckOrNot()).thenReturn(true);
+
+        anki.run();
+
+        verify(deckLoader, times(1)).loadDeck();
+    }
+
+    @Test
+    public void test_deck_is_not_loading_when_user_answers_no() {
+        when(userInterface.askUserToLoadDeckOrNot()).thenReturn(false);
+
+        anki.run();
+
+        verify(deckLoader, never()).loadDeck();
     }
 
 }
