@@ -34,4 +34,12 @@ public class Box {
     public boolean isEmpty() {
         return cards.isEmpty();
     }
+
+    /**
+     * The number of cards in this box is a positive integer.
+     * @return the number of cards in this box.
+     */
+    public int numberOfCards() {
+        return cards.size();
+    }
 }
