@@ -5,6 +5,9 @@ import com.weekendesk.anki.files.FileDeckLoader;
 
 import java.util.Scanner;
 
+/**
+ * This class just instanciates the concrete classes and injects them to the Anki class.
+ */
 public final class Main {
 
     public static void main(String[] args) {

@@ -5,6 +5,10 @@ import com.weekendesk.anki.domain.Deck;
 import com.weekendesk.anki.domain.Session;
 import com.weekendesk.anki.domain.Student;
 
+/**
+ * This class is the higher class of the program. It is responsible running of the program from the first
+ * action to do, to the last one.
+ */
 public class Anki {
 
     private final UserInterface userInterface;
@@ -32,6 +36,9 @@ public class Anki {
         userInterface.sayGoodByeToTheUser();
     }
 
+    /**
+     * Load the cards of the deck into the red box.
+     */
     private void loadDeck() {
         Deck deck = deckLoader.loadDeck();
         redBox.putCards(deck.cards);
