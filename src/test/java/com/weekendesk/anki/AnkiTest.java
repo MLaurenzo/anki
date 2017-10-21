@@ -1,10 +1,13 @@
 package com.weekendesk.anki;
 
+import com.weekendesk.anki.domain.Deck;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.ArrayList;
 
 import static org.mockito.Mockito.*;
 
@@ -21,6 +24,7 @@ public class AnkiTest {
     @Before
     public void setUp() {
         anki = new Anki(userInterface, deckLoader);
+        when(deckLoader.loadDeck()).thenReturn(new Deck(new ArrayList<>()));
     }
 
     @Test

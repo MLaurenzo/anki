@@ -1,6 +1,7 @@
 package com.weekendesk.anki.domain;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -11,10 +12,18 @@ public class Box {
 
     /**
      * This method add a card into the box.
-     * @param card
+     * @param card - card which is added
      */
     public void putCard(Card card) {
         cards.add(card);
+    }
+
+    /**
+     * This methods add several cards into the box.
+     * @param cards - cards which are added
+     */
+    public void putCards(Collection<Card> cards) {
+        this.cards.addAll(cards);
     }
 
     /**
