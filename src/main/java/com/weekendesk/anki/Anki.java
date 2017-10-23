@@ -28,12 +28,24 @@ public class Anki {
     }
 
     public void run() {
-        if (userInterface.askUserToLoadDeckOrNot()) loadDeck();
+        if (userInterface.askUserToLoadDeckOrNot()) {
+            loadDeck();
+        }
 
         Session session = new Session(student, redBox, orangeBox, greenBox);
         session.run();
+        transferCards();
 
         userInterface.sayGoodByeToTheUser();
+    }
+
+    /**
+     * All the cards in the green box are put into the orange box,
+     * and the ones in the orange box are put in the red box.
+     */
+    private void transferCards() {
+        orangeBox.moveCardsTo(redBox);
+        greenBox.moveCardsTo(orangeBox);
     }
 
     /**

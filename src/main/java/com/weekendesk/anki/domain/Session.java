@@ -26,12 +26,9 @@ public class Session {
     public void run() {
         while(!redBox.isEmpty()) {
             Card currentCard = redBox.takeCard();
-
             Evaluation evaluation = student.guessAnswer(currentCard);
-
             getTheRightBox(evaluation).putCard(currentCard);
         }
-
     }
 
     /**
