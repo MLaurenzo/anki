@@ -43,4 +43,16 @@ public class BoxTest {
         Assert.assertEquals(card, box.takeCard());
     }
 
+    @Test
+    public void test_moveCardsTo_method() {
+        Box box = new Box();
+        Card card = new Card(null, null);
+        box.putCard(card);
+        Box anotherBox = new Box();
+
+        box.moveCardsTo(anotherBox);
+
+        Assert.assertEquals(card, anotherBox.takeCard());
+    }
+
 }

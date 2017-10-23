@@ -51,4 +51,15 @@ public class Box {
     public int numberOfCards() {
         return cards.size();
     }
+
+    /**
+     * This method transfers all the cards of this box to the given box.
+     * The given box will contain all the instances of cards previously contained in this box.
+     * This cards won't contain cards anymore.
+     * @param anotherBox
+     */
+    public void moveCardsTo(Box anotherBox) {
+        anotherBox.cards.addAll(this.cards);
+        this.cards.clear();
+    }
 }

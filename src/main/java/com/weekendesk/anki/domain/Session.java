@@ -31,6 +31,7 @@ public class Session {
 
             getTheRightBox(evaluation).putCard(currentCard);
         }
+
     }
 
     /**
